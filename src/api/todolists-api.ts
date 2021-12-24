@@ -1,5 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
-import * as stream from "stream";
+import axios, {AxiosResponse} from 'axios'
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.1/',
@@ -41,6 +40,9 @@ export const authAPI = {
       return instance.post<LoginParamsType, AxiosResponse<ResponseType<{ userId: number }>>>('auth/login', data)},
     me(){
         return instance.get<ResponseType<AuthMeType>>('auth/me');
+    },
+    logout(){
+        return instance.delete<ResponseType>('auth/login');
     }
 }
 // types

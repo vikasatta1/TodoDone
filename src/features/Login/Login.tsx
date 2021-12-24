@@ -11,7 +11,8 @@ import {useFormik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {loginTC} from "./authReducer";
 import {AppRootStateType} from "../../app/store";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+
 type FormikErrorType = {
     email?: string
     password?: string

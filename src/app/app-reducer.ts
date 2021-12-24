@@ -31,7 +31,7 @@ export type InitialStateType = {
 }
 export const initializeAppTC = () => (dispatch: Dispatch) => {
     authAPI.me().then(res => {
-        debugger
+
         if (res.data.resultCode === 0) {
             dispatch(setIsInitializedAC(true))
             dispatch(setIsLoggedInAC(true));
@@ -39,6 +39,9 @@ export const initializeAppTC = () => (dispatch: Dispatch) => {
         }
     })
 }
+
+
+
 
 export const setAppErrorAC = (error: string | null) => ({type: 'APP/SET-ERROR', error} as const)
 export const setAppStatusAC = (status: RequestStatusType) => ({type: 'APP/SET-STATUS', status} as const)
